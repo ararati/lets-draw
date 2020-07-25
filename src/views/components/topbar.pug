@@ -1,0 +1,26 @@
+include ../board/create-form-modal
+nav(class='navbar navbar-expand-lg navbar-dark bg-primary')
+    a(class='navbar-brand' href="/") Lets draw
+    div(class='collapse navbar-collapse')
+        ul(class='navbar-nav mr-auto')
+            if isAuth
+                li(class='nav-item')
+                    a(class='nav-link' href = `/user/${authId}`) My profile
+            li(class='nav-item')
+                a(class='nav-link' href='/users') Painters
+
+        ul(class='navbar-nav navbar-right')
+            if isAuth
+                li(class='nav-item')
+                    a(class='nav-link' href='/settings') My settings
+
+                form.form-inline.my-0(method='POST' action='auth/logout' onSubmit="return confirm('Sign out of your profile?');")
+                    button(type='submit' class='btn btn-link nav-item my-0' style='color:rgba(255,255,255,.5)') Log out
+
+            else
+                li(class='nav-item')
+                    a(class='nav-link' href='/auth/login') Log in
+                li(class='nav-item')
+                    a(class='nav-link' href='/auth/signup') Sign up
+
+            button(class='btn btn-outline-light' data-toggle="modal" data-target="#boardCreateModal") Create canvas

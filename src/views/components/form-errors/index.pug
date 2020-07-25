@@ -1,0 +1,6 @@
+if validationFailure.length > 0
+    div(class='alert alert-danger')
+        h4(class='alert-heading') Oops..
+        ul
+            each error in validationFailure
+                li= error

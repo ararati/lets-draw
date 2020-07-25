@@ -1,0 +1,10 @@
+extends ../layouts/app
+
+block content
+    div(class='container container-small mt-5')
+        .d-flex.flex-wrap
+            each user in users
+                div(class='card m-2' style='width:300px')
+                    div(class='card-body')
+                        a(href=`/user/${user._id}`)
+                            .h5=user.name

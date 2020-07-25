@@ -1,0 +1,22 @@
+extends ../layouts/app
+block content
+    p=user
+    div(class='container-sm  mt-5' style='max-width:400px')
+        include ../components/form-errors/index
+        div(class='card')
+            div(class='card-header') Sign up
+            div(class='card-body')
+                form(method='POST')
+                    div(class='form-group')
+                        label Nickname
+                        input(type='text' class='form-control' name='name')
+
+                    div(class='form-group')
+                        label Password
+                        input(type='password' class='form-control' name='password')
+
+                    div(class='form-group')
+                        label Repeat password
+                        input(type='password' class='form-control' name='repeat_password')
+
+                    button(type='submit' class='btn btn-lg btn-block btn-primary') Sign up

@@ -1,0 +1,8 @@
+extends ../layouts/app
+
+block content
+    div(class='container-fluid container-small mt-5')
+        div(style='text-align:center')
+            canvas(width=`${board.width}px` height=`${board.height}px` style='border:1px solid #e4e4e4;')
+
+    script(src='/js/bundle.js')

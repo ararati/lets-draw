@@ -1,0 +1,9 @@
+block content
+    div(class='container container-small mt-0')
+        .d-flex.flex-wrap
+            each board in boards
+                div(class='card m-2' style='width:300px')
+                    div(class='card-body')
+                        a(href=`/board/${board._id}`)
+                            .h5=board.name
+                        small.text-muted=`${board.width}x${board.height}`

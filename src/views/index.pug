@@ -1,0 +1,14 @@
+extends layouts/app
+
+block content
+    .jumbotron
+        .container
+            h1.display-4 Let's draw!
+            p.lead
+                | Draw your pictures with your friends using one canvas!
+            hr.my-4
+            if isAuth
+                a.btn.btn-primary.btn-lg(href='#', role='button' data-toggle="modal" data-target="#boardCreateModal") Create canvas
+            else
+                a.btn.btn-primary.btn-lg.mr-2(href='/auth/login', role='button') Login
+                a.btn.btn-primary.btn-lg(href='/auth/signup', role='button') New user

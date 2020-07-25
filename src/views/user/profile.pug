@@ -1,0 +1,22 @@
+extends ../layouts/app
+
+block content
+    .container.mt-5
+        .row
+            .col-sm-3
+                .card.mb-2
+                    .card-body.text-center.p-0
+                        img.pb-2(src='https://picsum.photos/300/300' width='100%' style='min-height:261px')
+                        h4.p-2=user.name
+                ul.list-group.mt-2
+                    a.list-group-item.d-flex.justify-content-between.align-items-center(class="{{Route::is('users.show') ? 'active' : ''}}" href="{{route('users.show', $user->id)}}")
+                        | Profile
+                    a.list-group-item.d-flex.justify-content-between.align-items-center(class="{{Route::is('followers') ? 'active' : ''}}" href="{{route('followers', $user->id)}}")
+                        | Followers
+                        span.badge.badge-primary.badge-pill 0
+                    a.list-group-item.d-flex.justify-content-between.align-items-center(class="{{Route::is('following') ? 'active' : ''}}" href="{{route('following', $user->id)}}")
+                        | Following
+                        span.badge.badge-primary.badge-pill 0
+            .col-sm-9
+                - let boards = userBoards
+                include ../board/list
