@@ -1,4 +1,4 @@
-# Let's-draw!
+# Let's draw!
 A site to draw shared images online with your friends using one canvas.   You can create different canvases and publish the result to your profile.
 
 ### License
